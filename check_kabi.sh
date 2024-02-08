@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: GPL-2.0
+# SPDX-License-Identifier: MIT
 # Copyright (c) 2023 Fan Dai <lindorx@163.com>
 
 USE_TEMPLET="./check_kabi.sh -i -r -c default_config -p Kabi.path_* -k Module.kabi_*"
