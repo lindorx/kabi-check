@@ -4,10 +4,10 @@
 
 USE_TEMPLET="./check_kabi.sh -i -r -c default_config -p Kabi.path_* -k Module.kabi_*"
 
-ERNUM_NO_ARCH=1
-ERNUM_NO_KABI_FILE=2
-ERNUM_NO_SYMS_FILE=3
-ERNUM_CHECK_WRONG=4
+ERNUM_NO_ARCH=3
+ERNUM_NO_KABI_FILE=4
+ERNUM_NO_SYMS_FILE=5
+ERNUM_CHECK_WRONG=6
 
 CC=gcc
 GENKSYMS=./scripts/genksyms/genksyms
