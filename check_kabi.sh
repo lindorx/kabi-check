@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright (c) 2023 Fan Dai <lindorx@163.com>
 
-USE_TEMPLET="./check_kabi.sh -i -r -c uos419_defconfig -p Kabi.path_* -k Module.kabi_*"
+USE_TEMPLET="./check_kabi.sh -i -r -c default_config -p Kabi.path_* -k Module.kabi_*"
 
 ERNUM_NO_ARCH=1
 ERNUM_NO_KABI_FILE=2
@@ -16,6 +16,8 @@ KABI_SYMS=./Kabi.syms
 MODULE_TMP_KABI=$KABI_TMP_DIR/Module.kabi_list
 cpus=`grep processor /proc/cpuinfo | wc -l`
 ARCH=`arch`
+
+DEFAULT_CONFIG="default_config"
 
 if [ "$ARCH" == "x86_64" ]; then
     kernel_arch="x86"
@@ -233,7 +235,7 @@ function default_arg()
     clean_flag=1
     Module_kabi_f="./uos/kabi/Module.kabi_$ARCH"
     Kabi_path_f="./uos/kabi/Kabi.path_$ARCH"
-    kernel_config="uos419_defconfig"
+    kernel_config=$DEFAULT_CONFIG
 }
 
 function fargs()
